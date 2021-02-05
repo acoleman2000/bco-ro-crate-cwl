@@ -1,0 +1,16 @@
+{
+    "reads": [
+        {
+            "class": "File",
+            "path": "/Users/hadley/GitHub/cwl-bco/melbournebioinformatics/core/mutant_R1.fastq"
+        },
+        {
+            "class": "File",
+            "path": "/Users/hadley/GitHub/cwl-bco/melbournebioinformatics/core/mutant_R2.fastq"
+        }
+    ],
+    "reference": {
+        "class": "File",
+        "path": "/Users/hadley/GitHub/cwl-bco/melbournebioinformatics/core/wildtype.fna"
+    }
+}
