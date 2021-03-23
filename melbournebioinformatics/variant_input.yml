@@ -1,0 +1,20 @@
+reads: 
+   - {class: File, path: core\mutant_R1.fastq}
+   - {class: File, path: core\mutant_R2.fastq}
+reference: 
+   class: File
+   path: core\wildtype.fna
+   secondaryFiles: 
+      - class: File
+        path: core\wildtype.fna.amb
+      - class: File
+        path: core\wildtype.fna.ann
+      - class: File
+        path: core\wildtype.fna.bwt
+      - class: File
+        path: core\wildtype.fna.pac
+      - class: File
+        path: core\wildtype.fna.sa
+      - class: File
+        path: core\wildtype.fna.fai
+ 
