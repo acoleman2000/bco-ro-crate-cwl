@@ -5,54 +5,22 @@ label: HCV_variant
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 inputs:
-  - id: reads
-    type: 'File[]'
-    'sbg:x': -1124.1566162109375
-    'sbg:y': -125.52313232421875
   - id: reference
     type: File
-    'sbg:x': -1025.7716064453125
-    'sbg:y': -288.1734313964844
+    'sbg:x': -1207.160888671875
+    'sbg:y': -466.4270324707031
+  - id: reads
+    type: 'File[]'
+    'sbg:x': -1089.658203125
+    'sbg:y': -156.1692657470703
 outputs:
   - id: variants
     outputSource:
       - freebayes/variants
     type: File
-    'sbg:x': -99.35231018066406
-    'sbg:y': -419.6639404296875
+    'sbg:x': -175.2062530517578
+    'sbg:y': -377.2226257324219
 steps:
-  - id: samtools_sort
-    in:
-      - id: alignment
-        source: bwa_mem/alignment
-    out:
-      - id: sorted_alignment
-    run: ./samtools-sort.cwl
-    label: samtools-sort
-    'sbg:x': -601.5089111328125
-    'sbg:y': -100.70106506347656
-  - id: bwa_index
-    in:
-      - id: reference
-        source: reference
-    out:
-      - id: out
-    run: ./bwa-index.cwl
-    label: BWA-Index
-    'sbg:x': -931.1031494140625
-    'sbg:y': -215.6334686279297
-  - id: bwa_mem
-    in:
-      - id: reads
-        source:
-          - reads
-      - id: reference
-        source: bwa_index/out
-    out:
-      - id: alignment
-    run: ./bwa-mem.cwl
-    'sbg:x': -841.5729370117188
-    'sbg:y': -94.29181671142578
   - id: freebayes
     in:
       - id: alignment
@@ -63,8 +31,8 @@ steps:
       - id: variants
     run: ./freebayes.cwl
     label: freebayes
-    'sbg:x': -292.2562255859375
-    'sbg:y': -329.5551452636719
+    'sbg:x': -503.6619567871094
+    'sbg:y': -373.05120849609375
   - id: samtools_index
     in:
       - id: alignment
@@ -73,8 +41,40 @@ steps:
       - id: output
     run: ./samtools-index.cwl
     label: samtools-index
-    'sbg:x': -487.63262939453125
-    'sbg:y': -105.64871215820312
+    'sbg:x': -688.2169189453125
+    'sbg:y': -264.6105041503906
+  - id: samtools_sort
+    in:
+      - id: alignment
+        source: bwa_mem/alignment
+    out:
+      - id: sorted_alignment
+    run: ./samtools-sort.cwl
+    label: samtools-sort
+    'sbg:x': -798.1316528320312
+    'sbg:y': -222.3167266845703
+  - id: bwa_mem
+    in:
+      - id: reads
+        source:
+          - reads
+      - id: reference
+        source: bwa_index/out
+    out:
+      - id: alignment
+    run: ./bwa-mem.cwl
+    'sbg:x': -940.9181518554688
+    'sbg:y': -202.87188720703125
+  - id: bwa_index
+    in:
+      - id: reference
+        source: reference
+    out:
+      - id: out
+    run: ./bwa-index.cwl
+    label: BWA-Index
+    'sbg:x': -1110.5123291015625
+    'sbg:y': -341.77069091796875
 requirements: []
 'sbg:categories':
   - Alignment
