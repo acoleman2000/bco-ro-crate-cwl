@@ -2,17 +2,12 @@ class: CommandLineTool
 cwlVersion: v1.0
 $namespaces:
   sbg: 'https://www.sevenbridges.com/'
-  s: https://schema.org/
-  edam: http://edamontology.org/
 baseCommand:
   - bwa
   - mem
 inputs:
   - id: reads
     type: 'File[]'
-    format:
-      - edam:format_1930 # FASTA
-      - edam:format_1931 # FASTQ
     inputBinding:
       position: 1
   - id: reference
@@ -32,5 +27,5 @@ outputs:
       glob: output.bam
 requirements:
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/bwa:0.7.17--ha92aebf_3'
+    dockerPull: 'quay.io/biocontainers/bwa:0.7.8--hed695b0_5'
 stdout: output.bam

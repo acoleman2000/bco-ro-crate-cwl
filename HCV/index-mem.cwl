@@ -9,17 +9,13 @@ inputs:
     type: File
     'sbg:x': -316.3905944824219
     'sbg:y': -148.5
-  - id: reads
-    type: 'File[]'
-    'sbg:x': -217.3905792236328
-    'sbg:y': -15.5
 outputs:
-  - id: alignment
+  - id: index
     outputSource:
-      - bwa_mem/alignment
+      - bwa_index/index
     type: File
-    'sbg:x': 5.609415054321289
-    'sbg:y': -145.5
+    'sbg:x': 4.499988555908203
+    'sbg:y': -140.60470581054688
 steps:
   - id: bwa_index
     in:
@@ -32,19 +28,4 @@ steps:
     run: ./bwa-index.cwl
     'sbg:x': -180
     'sbg:y': -150
-  - id: bwa_mem
-    in:
-      - id: reads
-        source:
-          - reads
-      - id: reference
-        source:
-          - bwa_index/indexed_reference
-          - bwa_index/index
-    out:
-      - id: alignment
-    run: ./bwa-mem.cwl
-    'sbg:x': -49
-    'sbg:y': -37
-requirements:
-  - class: MultipleInputFeatureRequirement
+requirements: []

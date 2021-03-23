@@ -9,23 +9,21 @@ inputs:
   - id: alignment
     type: File
     inputBinding:
-      position: 0
+      position: 1
     secondaryFiles:
       - .bai
   - id: reference
     type: File
     inputBinding:
       position: 0
-      prefix: '--fasta-reference'
-    secondaryFiles:
-      - .fai
+      prefix: '-f'
+    # secondaryFiles:
+    #   - .fai
 outputs:
   - id: variants
     type: File
-    outputBinding:
-      glob: variants.vcf
 label: freebayes
 requirements:
   - class: DockerRequirement
-    dockerPull: 'maxulysse/freebayes:2.0.0'
+    dockerPull: 'ctomlins/freebayes_polish:latest'
 stdout: varients.vcf

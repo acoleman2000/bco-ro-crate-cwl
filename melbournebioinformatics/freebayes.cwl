@@ -11,7 +11,7 @@ inputs:
     inputBinding:
       position: 0
     secondaryFiles:
-      - .bai
+      - .bai  
   - id: reference
     type: File
     inputBinding:
@@ -23,6 +23,9 @@ outputs:
   - id: variants
     type: stdout
 label: freebayes
+arguments:
+  - position: 0
+    prefix: ''
 requirements:
   - class: DockerRequirement
     dockerPull: 'maxulysse/freebayes:2.0.0'

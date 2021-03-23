@@ -12,8 +12,10 @@ inputs:
     inputBinding:
       position: 0
 outputs:
-  sorted_alignment:
-    type: stdout
+  - id: sorted_alignment
+    type: File
+    outputBinding:
+      glob: sorted_alignment.bam
 label: samtools-sort
 requirements:
   - class: DockerRequirement
