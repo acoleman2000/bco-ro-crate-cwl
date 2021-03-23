@@ -1,5 +1,5 @@
 class: CommandLineTool
-cwlVersion: v1.2
+cwlVersion: v1.0
 label: BWA-Index
 doc: |-
   bwa - Burrows-Wheeler Alignment Tool
@@ -48,11 +48,11 @@ outputs:
   label: out
   type: File
   secondaryFiles:
-  - pattern: .amb
-  - pattern: .ann
-  - pattern: .bwt
-  - pattern: .pac
-  - pattern: .sa
+  - .amb
+  - .ann
+  - .bwt
+  - .pac
+  - .sa
   outputBinding:
     glob: $(inputs.reference.basename)
     loadContents: false

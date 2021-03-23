@@ -1,0 +1,6 @@
+reads: 
+   - {class: File, path: data/sample_R1.fastq}
+   - {class: File, path: data/sample_R2.fastq}
+reference: 
+     class: File
+     path: data/NC_004102.1.fasta
