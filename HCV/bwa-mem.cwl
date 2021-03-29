@@ -27,5 +27,5 @@ outputs:
       glob: output.bam
 requirements:
   - class: DockerRequirement
-    dockerPull: 'quay.io/biocontainers/bwa:0.7.8--hed695b0_5'
+    dockerPull: 'biocontainers/bwa:v0.7.17_cv1'
 stdout: output.bam

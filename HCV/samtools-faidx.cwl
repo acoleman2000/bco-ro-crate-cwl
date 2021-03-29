@@ -4,7 +4,6 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: samtools_faidx
 baseCommand:
-  - samtools
   - faidx
 inputs:
   - id: reference
@@ -17,11 +16,11 @@ outputs:
     outputBinding:
       glob: $(inputs.reference.basename)
     secondaryFiles:
-        - .fai
+      - .fai
 label: samtools_faidx.cwl
 requirements:
   - class: DockerRequirement
-    dockerPull: 'wgspipeline/samtools:v0.0.2'
+    dockerPull: 'stjudecloud/samtools:branch-validate-refactor-1.0.0'
   - class: InitialWorkDirRequirement
     listing:
       - entry: $(inputs.reference)

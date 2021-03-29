@@ -17,13 +17,11 @@ inputs:
     inputBinding:
       position: 0
       prefix: '-f'
-    # secondaryFiles:
-    #   - .fai
 outputs:
   - id: variants
     type: File
 label: freebayes
 requirements:
   - class: DockerRequirement
-    dockerPull: 'ctomlins/freebayes_polish:latest'
+    dockerPull: 'davidyuyuan/freebayes:dlf'
 stdout: varients.vcf

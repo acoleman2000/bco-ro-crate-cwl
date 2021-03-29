@@ -4,7 +4,6 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: samtools_index
 baseCommand:
-  - samtools
   - index
 inputs:
   - id: alignment
@@ -23,7 +22,7 @@ outputs:
 label: samtools-index
 requirements:
   - class: DockerRequirement
-    dockerPull: 'biocontainers/samtools:v1.9-4-deb_cv1'
+    dockerPull: 'stjudecloud/samtools:branch-validate-refactor-1.0.0'
   - class: InitialWorkDirRequirement
     listing:
       - $(inputs.alignment)

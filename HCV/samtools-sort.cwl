@@ -4,7 +4,6 @@ $namespaces:
   sbg: 'https://www.sevenbridges.com/'
 id: samtools_sort
 baseCommand:
-  - samtools
   - sort
 inputs:
   - id: alignment
@@ -19,5 +18,5 @@ outputs:
 label: samtools-sort
 requirements:
   - class: DockerRequirement
-    dockerPull: 'biocontainers/samtools:v1.9-4-deb_cv1'
+    dockerPull: 'stjudecloud/samtools:branch-validate-refactor-1.0.0'
 stdout: sorted_alignment.bam
